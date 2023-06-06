@@ -234,6 +234,7 @@ MonoBehaviour:
   redSlider: {fileID: 2180915212326329737}
   greenSlider: {fileID: 2180915212864103941}
   blueSlider: {fileID: 2180915212309943168}
+  masterPlayer: 0
 --- !u!1 &2180915212217373139
 GameObject:
   m_ObjectHideFlags: 0

@@ -781,7 +781,7 @@ MonoBehaviour:
       frequency: 20
       handShakeRig: {fileID: 744620679}
       handShakeIdle: {fileID: -203655887218126122, guid: c945a439dfe0cd944ae44f15687521e2, type: 3}
-  otherPlayerEmoteSM: {fileID: 0}
+  requestedPlayer: {fileID: 0}
   instigator: 0
   _lerpSpeed: 10
 --- !u!114 &333925559
@@ -972,7 +972,7 @@ MonoBehaviour:
   emotesMenu: {fileID: 1323077879468302101}
   _capsuleCollider: {fileID: 8946847492050146963}
   syncPosition: {fileID: 926772061}
-  otherPlayerObject: {fileID: 0}
+  requestedPlayerGameObject: {fileID: 0}
   allRigs:
   - {fileID: 438241213409751578}
   - {fileID: 744620679}

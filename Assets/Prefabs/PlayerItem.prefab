@@ -353,3 +353,4 @@ MonoBehaviour:
   redSlider: {fileID: 0}
   greenSlider: {fileID: 0}
   blueSlider: {fileID: 0}
+  masterPlayer: 0

@@ -3,16 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CinemachineTarget
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
   - 
+  - PostProcessing
   - 
   - 
   - 
@@ -34,9 +37,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - DollyTrack
+  - Terrain
   m_SortingLayers:
   - name: Default
     uniqueID: 0

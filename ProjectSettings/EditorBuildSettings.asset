@@ -11,7 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LobbyScene.unity
     guid: a546c7f7708fbdc42b8e5a92a50d0f4e
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  m_configObjects: {}
+  - enabled: 0
+    path: Assets/Free Island Collection/Scenes/Scene 1.unity
+    guid: 21395a1af6f566b459cf2f256020dc81
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 153a5c85cbc520644858d8fb980c6c8f,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5fe1184993f1e460f934e68a989b0762,
+      type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: b37e65064f45f4fd6823321fb70ec038,
+      type: 2}
