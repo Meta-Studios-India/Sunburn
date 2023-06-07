@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 1
@@ -61,7 +61,7 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 1
   intensity:
     m_OverrideState: 1
     m_Value: 2.5
@@ -78,8 +78,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   skipIterations:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 5
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.2
   clamp:
     m_OverrideState: 1
     m_Value: 0.1
@@ -146,10 +146,10 @@ MonoBehaviour:
     m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: 32
+    m_Value: 10
   colorFilter:
-    m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0, b: 0.09242201, a: 1}
   hueShift:
     m_OverrideState: 1
     m_Value: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   intensity:
     m_OverrideState: 1
     m_Value: 0.257
---- !u!114 &-2847012291543010912
+--- !u!114 &-2463395520317594341
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,25 +181,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
-  m_Name: Vignette
+  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
+  m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
   active: 1
-  color:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-  center:
-    m_OverrideState: 0
-    m_Value: {x: 0.5, y: 0.5}
-  intensity:
+  shadows:
     m_OverrideState: 1
-    m_Value: 0.3
-  smoothness:
-    m_OverrideState: 0
-    m_Value: 0.2
-  rounded:
-    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0.13582343}
+  midtones:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
+  highlights:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0.01697793}
+  shadowsStart:
+    m_OverrideState: 1
     m_Value: 0
+  shadowsEnd:
+    m_OverrideState: 1
+    m_Value: 0.5
+  highlightsStart:
+    m_OverrideState: 1
+    m_Value: 0.62
+  highlightsEnd:
+    m_OverrideState: 1
+    m_Value: 1.24
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,12 +221,12 @@ MonoBehaviour:
   components:
   - {fileID: -3672302446107336018}
   - {fileID: 2331408850410906922}
-  - {fileID: -2847012291543010912}
   - {fileID: -4062481241321750826}
   - {fileID: -6834095727105209441}
   - {fileID: -2909166136532873884}
   - {fileID: -8055576427348332845}
   - {fileID: -6151842301505970780}
+  - {fileID: -2463395520317594341}
 --- !u!114 &2331408850410906922
 MonoBehaviour:
   m_ObjectHideFlags: 3

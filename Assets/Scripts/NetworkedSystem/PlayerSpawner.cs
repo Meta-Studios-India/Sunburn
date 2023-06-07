@@ -17,6 +17,8 @@ public class PlayerSpawner : MonoBehaviourPunCallbacks
     public GameObject localPlayerObject;
     public List<GameObject> playersInGame = new List<GameObject>();
 
+    bool localPlayerisMasterPlayer;
+
     public void Start() {
         foreach(Transform child in transform) {
             playerSpawnPoints.Add(child);
@@ -25,15 +27,13 @@ public class PlayerSpawner : MonoBehaviourPunCallbacks
         object[] data = new object[1];
         data[0] = new Vector3(PlayerPrefs.GetFloat("Red"), PlayerPrefs.GetFloat("Green"), PlayerPrefs.GetFloat("Blue"));
         localPlayerObject = PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity, 0, data);
-        bool masterPlayer=false;
         if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("Name")) {
-            //masterPlayer = (bool)PhotonNetwork.LocalPlayer.CustomProperties["MasterPlayer"];
+            localPlayerisMasterPlayer = (bool)PhotonNetwork.LocalPlayer.CustomProperties["MasterPlayer"];
             localPlayerObject.name = PhotonNetwork.LocalPlayer.CustomProperties["Name"].ToString();
-            localPlayerObject.GetComponent<PhotonView>().RPC("RPC_SetPlayerName",RpcTarget.AllBuffered ,PhotonNetwork.LocalPlayer.CustomProperties["Name"].ToString(),masterPlayer);
         }
         else
             LoadFromFile(localPlayerObject);
-        localPlayerObject.GetComponentInChildren<PlayerSetup>().SetupPlayer(masterPlayer);
+        localPlayerObject.GetComponentInChildren<PlayerSetup>().SetupPlayer(localPlayerisMasterPlayer);
         playersInGame.Add(localPlayerObject);
         FindAllPlayers();
     }
@@ -49,11 +49,6 @@ public class PlayerSpawner : MonoBehaviourPunCallbacks
             if (!view.IsMine)
                 playersInGame.Add(view.gameObject);
         }
-    } 
-
-    [PunRPC]
-    public void RPC_SetPlayerName(string _name,bool _masterPlayer) {
-        name= _name;
     }
 
     private void LoadFromFile(GameObject localPlayer) {

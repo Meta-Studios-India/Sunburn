@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class PlayerSetup : MonoBehaviour
-{
+public class PlayerSetup : MonoBehaviour {
     public List<MonoBehaviour> playerComponents = new List<MonoBehaviour>();
     public GameObject cameraPrefab;
     public GameObject canvasObject;
@@ -23,5 +22,11 @@ public class PlayerSetup : MonoBehaviour
 
     public void SetupPlayer(bool masterPlayer) {
         _masterPlayer = masterPlayer;
+        photonView.RPC("RPC_SetPlayerName", RpcTarget.AllBuffered, transform.parent.name);
+    }
+
+    [PunRPC]
+    public void RPC_SetPlayerName(string _name) {
+        transform.parent.name = _name;
     }
 }

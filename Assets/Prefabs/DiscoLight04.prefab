@@ -44,7 +44,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 50
   m_Range: 90.53253
   m_SpotAngle: 72.11554
@@ -337,7 +337,7 @@ MonoBehaviour:
   _axis: {x: 0, y: 0, z: 1}
   mode: 0
   rangeVector: {x: 0, y: 0}
-  random: 0
+  random: 1
 --- !u!1 &1225508577214714632
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1225508577214746408
 Transform:
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e133089be35957542bde83e117065db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bias: 1
+  bias: 45
   timeStep: 0.15
   timeToBeat: 0.05
   restSmoothTime: 2
@@ -482,11 +482,11 @@ MonoBehaviour:
   - {r: 0, g: 0.013520718, b: 1, a: 1}
   - {r: 0.5999012, g: 0, b: 1, a: 1}
   - {r: 1, g: 0, b: 0.59063005, a: 1}
-  restColor: {r: 1, g: 1, b: 1, a: 0}
+  restColor: {r: 0, g: 0, b: 0, a: 0}
   beatEdge: 2
   restEdge: 0
   beatIntensity: 50
-  restIntensity: 10
+  restIntensity: 0
   sourceLight: {fileID: 556010479}
   sharpieMesh: {fileID: 1225508577216646600}
   lampMaterial: {fileID: 0}
@@ -593,4 +593,4 @@ MonoBehaviour:
   _axis: {x: 0, y: 0, z: 0}
   mode: 1
   rangeVector: {x: 30, y: -210}
-  random: 0
+  random: 1

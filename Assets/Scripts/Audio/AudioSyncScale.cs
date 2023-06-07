@@ -10,7 +10,8 @@ public class AudioSyncScale : AudioSyncer
     public override void OnBeat() {
         base.OnBeat();
         StopCoroutine("MoveToScale");
-        StartCoroutine(MoveToScale(beatScale));
+        Vector3 scale = new Vector3(beatScale.x, beatScale.y * AudioValue/10, beatScale.z);
+        StartCoroutine(MoveToScale(scale));
     }
 
     public override void OnUpdate() {
@@ -28,7 +29,6 @@ public class AudioSyncScale : AudioSyncer
             currentScale = Vector3.Lerp(initialScale, target, timer / timeToBeat);
             timer += Time.deltaTime;
             transform.localScale = currentScale;
-
             yield return null;
         }
         isBeat = false;
